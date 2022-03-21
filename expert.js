@@ -201,4 +201,13 @@ document.onkeydown = function(e){
     }
 }
 
+function preventScroll(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  return false;
+}
+
 updateStatus()
+
+board.addEventListener('wheel', preventScroll, {passive: false});
