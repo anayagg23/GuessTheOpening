@@ -125,7 +125,6 @@ var config = {
 }
 board = Chessboard('myBoard', config)
 
-
 function isright(game){
     correct_opening = opening.substring(0, opening.lastIndexOf(" "))
     correct_opening = correct_opening.substring(0, correct_opening.lastIndexOf(" "))
@@ -193,4 +192,13 @@ document.onkeydown = function(e){
     }
 }
 
+function preventScroll(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  return false;
+}
+
 updateStatus()
+
+board.addEventListener('wheel', preventScroll, {passive: false});
