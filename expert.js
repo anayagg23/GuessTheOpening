@@ -144,7 +144,11 @@ function isright(game){
     if (game.pgn()==correct_opening){
         var tries = failures + 1;
         $("#exampleModal").modal("show")
-        document.getElementById("words").innerHTML="The opening was "+opening+". You got it in "+tries+" tries!"
+        if (tries==1){
+          document.getElementById("words").innerHTML="The opening was "+opening+". You got it in 1 try!"
+        }else{
+          document.getElementById("words").innerHTML="The opening was "+opening+". You got it in "+tries+" tries!"
+        }
     }else{
    
     failures++
