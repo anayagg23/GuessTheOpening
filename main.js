@@ -205,4 +205,7 @@ function preventScroll(e){
 
 updateStatus()
 
-board.addEventListener('wheel', preventScroll, {passive: false});
+
+jQuery(board).on('scroll touchmove touchend touchstart contextmenu', function(e){
+  e.preventDefault();
+  });
